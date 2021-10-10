@@ -1,0 +1,149 @@
+/* google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
+
+/* variables */
+:root {
+  --title-font: "Permanent Marker", cursive;
+  --task-font: "Raleway", sans-serif;
+  --margin-bottom: 0.2rem;
+  --lin-gradient: linear-gradient(45deg, #128fbe, #fd1d1d, #fcb045);
+  --letr-spce: 0.2rem;
+}
+
+/* general adjustment */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: var(--lin-gradient);
+  background-attachment: fixed;
+}
+
+/* fonsts setting */
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: var(--letr-spce);
+}
+label {
+  font-size: 1.2rem;
+  letter-spacing: var(--letr-spce);
+  margin-bottom: var(--margin-bottom);
+}
+#task-el h4 {
+  font-family: var(--task-font);
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+#task-el p {
+  font-family: var(--task-font);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+/* task section */
+section {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  font-family: var(--title-font);
+}
+input {
+  height: 1.5rem;
+  width: 30rem;
+  padding: 1rem;
+  border: 2px crimson solid;
+  border-radius: 7px;
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  letter-spacing: var(--letr-spce);
+}
+::placeholder {
+  font-family: "Raleway", sans-serif;
+  letter-spacing: var(--letr-spce);
+}
+
+input:nth-of-type(2) {
+  margin-bottom: 1rem;
+}
+button {
+  width: 7rem;
+  padding: 0.4rem;
+  background-color: #fff;
+  border: 2px crimson solid;
+  border-radius: 7px;
+  font-family: var(--title-font);
+}
+
+button:hover {
+  background: #fd1d1d;
+  border: 2px #fcb045 solid;
+  color: #fff;
+}
+
+/* task's divs */
+#task-el {
+  margin-top: 1rem;
+  color: #fff;
+}
+#task-el div {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  border: 1px solid black;
+  margin-bottom: var(--margin-bottom);
+}
+#task-el div div {
+  background: none;
+}
+#task-el input {
+  display: none;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+#task-el p {
+  margin: 0.2rem 0;
+}
+#task-el .one-task {
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#task-el .del-one-task {
+  padding: 0;
+  border: none;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  position: relative;
+}
+#task-el .del-one-task:before,
+#task-el .del-one-task:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 2px;
+  background: #fff;
+  top: 7px;
+  left: 4px;
+}
+#task-el .del-one-task:before {
+  transform: rotate(45deg);
+}
+#task-el .del-one-task:after {
+  transform: rotate(-45deg);
+}
+@media screen and (max-width: 550px) {
+  input {
+    width: 80%;
+  }
+}
